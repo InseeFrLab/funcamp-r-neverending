@@ -1,0 +1,45 @@
+## Préliminaire techniques
+
+
+Les apprenants ont vu comment exporter des dataframes et des graphiques.
+
+
+## A la conquête de la dernière rune ! 
+
+
+Pour achever Sassos et obtenir la dernière rune, apprenons le super-pouvoir d'exporter graphiques et tableaux...directement dans un rapport !  
+En effet, plutôt que de d'exporter un à un tous les graphiques et tableaux puis les copier-coller les uns à la suite des autres dans un éditeur de texte ou un tableur, nous allons mettre en oeuvre un sortilège bien plus astucieux. 
+
+Remarquez pour cela que nous avons changé d'environnement:  vous voici maintenant dans un environnement de développement intégré. 
+
+A gauche, le contenu du rapport. Vous pouvez éditer cette partie. A droite, l'allure finale du rapport. 
+
+Pour voir des modifications réalisées à gauche prendre vie à droite, Ctrl + S ou la disquette. 
+
+Pour faire s'executer du code, on le tape dans le bloc gris ci-dessous : 
+
+```{r eval = FALSE}
+
+une_fonction_de_lepisode_precedent()
+# 1+
+```
+
+Observez le rendu dans la page de droite.
+
+A votre tour : 
+- un skim
+- un dataset
+
+
+
+## Explications : 
+
+On rejoue une mécanique des épisodes précédents avec un graphique et un skim sur un dataset nouveau. En faisant Ctrl + S, l'apprenant voit son rapport se construire sous ses yeux. 
+Pour le récupérer, on l'invite à aller le chercher dans Files avec l'extension .html. 
+
+
+
+
+
+
+

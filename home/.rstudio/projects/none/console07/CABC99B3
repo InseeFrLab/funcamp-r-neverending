@@ -1,0 +1,15 @@
+]0;/home/icariusicarius@a3391197e913:~$ ls
+a1ok  rstudio
+]0;/home/icariusicarius@a3391197e913:~$ mv a1ok/* .
+]0;/home/icariusicarius@a3391197e913:~$ cd a1ok/
+]0;/home/icarius/a1okicarius@a3391197e913:~/a1ok$ ls
+]0;/home/icarius/a1okicarius@a3391197e913:~/a1ok$ ls -aslh
+total 13K
+4.0K drwxrwxrwx 1 root root 4.0K Jul  2 16:21 .
+4.0K drwxrwxrwx 1 root root 4.0K Jul  2 16:21 ..
+3.0K -rwxr-xr-x 1 root root 2.6K Jul  2 16:21 .RData
+ 512 -rwxr-xr-x 1 root root  445 Jul  2 16:21 .Rhistory
+1.0K -rwxr-xr-x 1 root root  948 Jul  2 16:21 .Rprofile
+   0 drwxrwxrwx 1 root root    0 Jul  2 16:21 .Rproj.user
+]0;/home/icarius/a1okicarius@a3391197e913:~/a1ok$ mv .Rprofile ..
+]0;/home/icarius/a1okicarius@a3391197e913:~/a1ok$ 

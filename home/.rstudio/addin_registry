@@ -1,0 +1,11 @@
+{
+    "xaringan::inf_mr": {
+        "name": "Infinite Moon Reader",
+        "package": "xaringan",
+        "title": "",
+        "description": "Run xaringan::infinite_moon_reader() to live preview slides or any\n   single-HTML-file R Markdown output.",
+        "interactive": true,
+        "binding": "inf_mr",
+        "ordinal": 1
+    }
+}

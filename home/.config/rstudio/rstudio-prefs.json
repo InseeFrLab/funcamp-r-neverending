@@ -1,0 +1,31 @@
+{
+    "reuse_sessions_for_project_links": true,
+    "panes": {
+        "quadrants": [
+            "Source",
+            "Console",
+            "TabSet1",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Viewer",
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Files",
+            "Environment",
+            "History",
+            "Plots",
+            "Connections",
+            "Packages",
+            "Help",
+            "Build",
+            "VCS",
+            "Tutorial"
+        ],
+        "console_left_on_top": false,
+        "console_right_on_top": true
+    },
+    "posix_terminal_shell": "bash",
+    "jobs_tab_visibility": "shown"
+}

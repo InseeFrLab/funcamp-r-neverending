@@ -1,0 +1,30 @@
+1593685962988:pwd
+1593685966553:getwd()
+1593706861011:getwd()
+1593718412031:# for ( i in 1:100){
+1593718412043:# .rs.api.documentClose()
+1593718412053:# }
+1593718412065:# cat(1)
+1593718412076:rstudioapi::navigateToFile(file = "plop.Rmd")
+1593718431426:setHook("rstudio.sessionInit", function(newSession) {
+1593718431443:# for ( i in 1:100){
+1593718431455:# .rs.api.documentClose()
+1593718431470:# }
+1593718431487:# cat(1)
+1593718431500:rstudioapi::navigateToFile(file = "plop.Rmd")
+1593718431512:# cat(2)
+1593718431522:Sys.sleep(1)
+1593718431533:# cat(3)
+1593718431546:cat("lancement xaringan")
+1593718431557:xaringan::infinite_moon_reader(moon = "plop.Rmd")
+1593718431569:rstudioapi::navigateToFile(file = "plop.Rmd")
+1593718431579:cat("done")
+1593718431590:}, action = "append")
+1593718438712:rstudioapi::navigateToFile(file = "plop.Rmd")
+1593718438740:# cat(2)
+1593718438750:Sys.sleep(1)
+1593718439764:# cat(3)
+1593718439777:cat("lancement xaringan")
+1593718439790:xaringan::infinite_moon_reader(moon = "plop.Rmd")
+1593718440996:rstudioapi::navigateToFile(file = "plop.Rmd")
+1593718441008:cat("done")
