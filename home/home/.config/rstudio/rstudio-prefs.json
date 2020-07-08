@@ -1,5 +1,6 @@
 {
     "reuse_sessions_for_project_links": true,
+    "show_hidden_files": true,
     "panes": {
         "quadrants": [
             "Source",
@@ -12,9 +13,9 @@
             "Presentation"
         ],
         "tabSet2": [
-            "Files",
             "Environment",
             "History",
+            "Files",
             "Plots",
             "Connections",
             "Packages",
@@ -26,6 +27,5 @@
         "console_left_on_top": false,
         "console_right_on_top": true
     },
-    "posix_terminal_shell": "bash",
-    "jobs_tab_visibility": "shown"
+    "posix_terminal_shell": "bash"
 }
