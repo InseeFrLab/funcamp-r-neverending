@@ -8,4 +8,4 @@ build:
     entrypoint: [""]
   script:
     - echo "{\"auths\":{\"$CI_REGISTRY\":{\"username\":\"$CI_REGISTRY_USER\",\"password\":\"$CI_REGISTRY_PASSWORD\"}}}" > /kaniko/.docker/config.json
-    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --registry-mirror https://registry-cache.lab.sspcloud.fr --destination $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_TAG
+    - /kaniko/executor --context $CI_PROJECT_DIR --dockerfile $CI_PROJECT_DIR/Dockerfile --registry-mirror registry-cache.lab.sspcloud.fr --destination $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_TAG
