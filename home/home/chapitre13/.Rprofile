@@ -13,6 +13,17 @@ setHook("rstudio.sessionInit", function(newSession) {
   cat("done")
 }, action = "append")
 
+
+
+file.copy(from ="/home/icarius/chapitre13/chapitre13.Rmd" ,to = "/home/icarius/.chapitre13_soluce_backup.Rmd")
+
+.reboot_chap13 <- function(...){
+  unlink("/home/icarius/chapitre13/chapitre13.Rmd",force = TRUE)
+  file.copy(from ="/home/icarius/.chapitre13_soluce_backup.Rmd" ,to = "/home/icarius/chapitre13/chapitre13.Rmd")
+  file.edit("/home/icarius/chapitre13/chapitre13.Rmd")
+}
+
+
 # library(rstudioapi)
 # for ( i in 1:100){
 # .rs.api.documentClose()

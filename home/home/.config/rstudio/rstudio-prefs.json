@@ -1,6 +1,5 @@
 {
     "reuse_sessions_for_project_links": true,
-    "show_hidden_files": true,
     "panes": {
         "quadrants": [
             "Source",
@@ -27,5 +26,6 @@
         "console_left_on_top": false,
         "console_right_on_top": true
     },
-    "posix_terminal_shell": "bash"
+    "posix_terminal_shell": "bash",
+    "default_project_location": "~"
 }
