@@ -1,42 +1,262 @@
-## Préliminaire techniques
 
-8 juillet 2020 bis
+Vous voici donc dans RStudio. Prenez le temps de prendre vos marques. L'environnement a été préparé pour vous : à gauche le panneau source, à droite le viewer. Sentez-vous libre de manipuler les fenêtres comme bon vous semble. 
 
-Les apprenants ont vu comment exporter des dataframes et des graphiques.
+Pour faciliter la mise en formes des mémoires d'Icarius au Royaume de Statis, nous allons utiliser le dièse pour faire en sorte que le texte apparaisse comme un titre dans le rapport des aventures, voyez plutôt. En positionnant un dièse sur la ligne 8, on observe une mise en forme sous forme de grand titre du rendu sur votre droite. Et en encadrant _des mots_ avec des _ de part et d'autre, on constate leur mise en forme italique. 
+Nous utiliserons ces balises tout au long du texte. Notez comment RStudio les colore en bleu pour nous assister. 
 
+# Chapitre 1 
 
-## A la conquête de la dernière rune ! 
+Icarius se réveille, Statia lui a murmuré dans un demi-sommeil que son royaume est en danger, elle a besoin de lui. Sitôt levé le mage Zilap vous a invité à prendre posession du grimoire IgoR.
 
+Pour quitter la maison d'Icarius, vous avez répondu consulté le grimoire et répondu à la question du mage Dregor : 
 
-Pour achever Sassos et obtenir la dernière rune, apprenons le super-pouvoir d'exporter graphiques et tableaux...directement dans un rapport !  
-En effet, plutôt que de d'exporter un à un tous les graphiques et tableaux puis les copier-coller les uns à la suite des autres dans un éditeur de texte ou un tableur, nous allons mettre en oeuvre un sortilège bien plus astucieux. 
+> Quel est l'âge d'Icarius ? 
 
-Remarquez pour cela que nous avons changé d'environnement:  vous voici maintenant dans un environnement de développement intégré. 
+A cet effet, nous avons exécuté l'instruction suivante : 
 
-A gauche, le contenu du rapport. Vous pouvez éditer cette partie. A droite, l'allure finale du rapport. 
-
-Pour voir des modifications réalisées à gauche prendre vie à droite, Ctrl + S ou la disquette. 
-
-Pour faire s'executer du code, on le tape dans le bloc gris ci-dessous : 
-
-```{r eval = FALSE}
-
-une_fonction_de_lepisode_precedent()
-# 1+
+```{r}
+nb_coeur <- 3
+max_nb_coeur <- 2*nb_coeur
+(nb_coeur * pi^2) - max_nb_coeur
 ```
 
-Observez le rendu dans la page de droite.
-
-A votre tour : 
-- un skim
-- un dataset
+Une fois dehors, vous avez parcouru les plaines de Statis et rencontré Statia. Ou plutôt un spectre d'elle qui nous offre une épée. 
 
 
+# Chapitre 2
 
-## Explications : 
+Parfaitement équipé, nous pouvons nous rendre au village de Kokoro en hachant menu les buissons.  
+Au village, le mage Tourep nous confie la lourde responsabilité d'aider la fermière avec le registre des pontes. 
 
-On rejoue une mécanique des épisodes précédents avec un graphique et un skim sur un dataset nouveau. En faisant Ctrl + S, l'apprenant voit son rapport se construire sous ses yeux. 
-Pour le récupérer, on l'invite à aller le chercher dans Files avec l'extension .html. 
+> En reconstituant le livre de comptes à partir des 4 fichiers aux formats différents quelle poule est la plus performante ? 
+
+```{r }
+library(rio)
+livre_compte_1 <- import("donnees/pontes_semaine1.sas7bdat")
+livre_compte_2 <- import("donnees/pontes_semaine2.xls")
+livre_compte_3 <- import("donnees/pontes_semaine3.ods")
+livre_compte_4 <- import("donnees/pontes_semaine4.csv")
+
+```
+
+Dans le livre 1, la meilleure poule est : 
+
+```{r}
+livre_compte_1
+```
+
+Dans le livre 2, la meilleure poule est : 
+
+```{r}
+livre_compte_2
+```
+
+Dans le livre 3, la meilleure poule est : 
+
+```{r}
+livre_compte_3
+```
+
+Dans le livre 4, la meilleure poule est : 
+
+```{r}
+livre_compte_4
+```
+
+Le mage Tourep nous remercie d'un bouclier qui nous rend apte à traverser les dangers des plaines de Statis. 
+Ainsi équipé, nous accédons à la première rune en abattant le premier monstrueux papillon
+
+
+# Chapitre 3
+
+Au delà des plaines de Statis, le mage Xeilhac qui siège dans le village de GrissGrass nous bassine avec sa soupe et...la mandragore. Il nous charge de mener l'enquête. 
+
+> Qui possède l'exploitation la plus productive ? 
+
+```{r}
+fichier_tellus <- import("donnees/recensement_agricole_statia_Tellus.ods")
+fichier_galia <- import("donnees/recensement_agricole_statia_Galia.ods")
+
+library(skimr)
+skim(fichier_galia)
+skim(fichier_tellus)
+```
+
+
+
+# Chapitre 4 
+
+Mais ce n'est pas suffisant, le mage Xeilhac vous pose une autre colle : 
+
+> quel est donc le secret d'une telle performance ? 
+
+La productivité de la meilleure exploitation est explicable par l'efficacité à conjuguer et chaîner les opérations sur la culture avec l'opérateur %>%. L'itinéraire technique optimal de la culture de la Mandragore est la suivante : 
+
+```{r, eval = FALSE}
+champ %>% 
+  labourer() %>% 
+  ajouter(coccinelles) %>%
+  semer() %>% 
+  arroser() %>% 
+  recolter()
+
+```
+(ce morceau de code n'est pas évalué)
+
+En récompense à vos nouvelles compétences en vocabulaire, le fermier Galia et le chef du village de Griss Grass vous offrent un filtre de mandragore : vos pouvoirs sont augmentés. 
+
+En allant au-delà du cimetière de GrissGrass, nous voilà face au monstrueux et souterrain Tartaros qui emprisonne les esprits égoistes qui ne partagent pas leur code. 
+
+Gonflé au philtre de Mandragore, Icarius n'en fait qu'une bouchée et prend du galon : il acquiert sa seconde rune. 
+
+# Chapitre 5 
+
+Arrivé au château de Statis la situation est dramatique : des forces occultes puissantes sont à l'oeuvre. Le ministre des armées Parlyus occupe le chateau avec des soldats.  
+Il réclame la guerre ! Quelle drôle d'idée ! Pour obtenir la clé de la cachette d'essepéus et se faire aider, il faut gagner la confiance de Batreb qui noie son chagrin dans l'ambroisie et résoudre l'énigme proposée en traçant le graphique qui permet de répondre à la question suivante : 
+
+> A partir de quelle puissance d'ambroisie Batreb franchit le seuil des 100 hoquets par heure ?
+
+```{r, eval = FALSE}
+
+livre_ambroisie %>% 
+  gf_line(ivresse ~ puissance, title = "Attention à l'abus d'ambroisie...")
+```
+
+Vous obtenez la clé qui permet de libérer Essepéus de la cave (ou ce qu'il en reste). 
+
+# Chapitre 6
+
+Une fois libéré de son cachot, Essepéus vous pose de tromper Parlyus en lui communiquant une fake news. Il s'agit de le tromper et de diriger les forces obscures le plus loin possible auprès du peuple le plus armé. 
+Le temps presse, car il s'agit de vaincre Sassos avant que le chef des armées ne rejoigne ce territoire. Statis est un royaume pacifique etvous devez veiller à ce qu'il le reste. 
+
+> Quel royaume est le plus éloigné, compte le plus de guerriers et le plus grand nombre de jours de canicule ? 
+
+```{r}
+
+```
+
+C'est le territoire des Hauts qu'il faut attaquer, le code à donner à Essepéus est 59
+
+Et c'est là la rencontre avec Sassos ! Ou plutôt un ectoplasme de lui. Il n'empêche que sa terrible PROC FIREBALL vous a salement amoché et il a disparu d'un coup de PROC EXPAND ! Heureusement, vous avez pu vous défendre en réfléchissant ses tirs grâce à l'épée. 
+
+
+# Chapitre 7 
+
+Le mage Delagarde à l'entrée du labyrinthe vous propose de manipuler quelques vecteurs pour vous guider dans le dédale. Bien que...il est possible de s'en sortir sans aide à dire vrai. 
+
+Qu'à cela ne tienne ! Il énonce une étrange vérité : 
+
+> quelle que soit la direction que tu regardes, la sortie se trouve au delà de Pi. 
+
+
+```{r}
+
+```
+
+
+
+
+# Chapitre 8 
+
+Une fois extrait du labyrinthe, on retrouve le mage Zilap dans le désert. Ce vieux ronchon doit bien reconnaître que vous avez progressé dans le maniement du langage des Runes ! Il vous explique comment ajouter des pages au grimoire, chaque package étant un nouveau chapitre. 
+
+
+```{r eval=FALSE}
+# J'installe les packages du tidyverse en une ligne
+install.packages("tidyverse")
+# Je charge les packages en une ligne
+library(tidyverse)
+```
+
+Vous voilà plus léger, ou plutôt les objets qui vous entourent le sont. Et vous rejoignez le village de Sandia. 
+
+# Chapitre 9 
+
+Le temps presse, vous débarquez dans le village de Sandia. Mam’Grouxi radote et vous conte les innombrables naissances qu’elle a vu au fil des ans (des siècles?). Elle vous demande d'identifier, dans le registre des naissances, le nom d’une jeune fille dont le Mana (la force vitale et magique) est le plus élevé.
+
+```{r eval=FALSE}
+naissances %>% 
+  filter(Genre == "F") %>%
+  mutate(Mana = Force + Spirit) %>%
+  arrange(desc(Mana))
+```
+
+C'est Statia ! et elle est née dans le village d'Hylia. Elle vous fait cadeau des bombes qui permettent de percer la montagne et entrer dans le temple de la Roche. Et c'est au coeur des souterrains, en déjouant monstres et boules de feu que Statia renforce le pouvoir de l'épée. Et heureusement car c'est Monolith qu'il faut affronter en déjouant ces satanées boules de feu. 
+
+Vous voilà en possession de la Xième rune. 
+
+En quittant le temple de la roche, l'éboulement condamne tout retour en arrière : l'affrontement final de SassoS est inélectuable. 
+
+
+# Chapitre 10 
+
+
+En poursuivant vos pérégrinations et après avoir abattu quelques drôles de sphinx, icaRius se trouve pris au piège dans la salle de l'impossible. Quelle que soit la direction prise, Icarius aterrit toujours au même endroit. Il doit apprendre à garder les choses en mémoire et les sauvegarder. 
+
+```{r eval=FALSE}
+save(naissances_1213,naissances_mana,file="../sauvegarde/tables_chapitre9.RData")
+sink()
+ggsave()
+export()
+```
+
+En retenant la suite d'instructions directionnelles qui s'avère être la célèbre suite de Konami, Icarius prend possession du bouclier éponyme. 
+
+# Chapitre 11
+
+Au sortir de la salle de l'impossible, Icarius ne peut poursuivre son chemin face aux tourbillons de l'éternel recommencement : il se retrouve systématiquement éjecté. C'est le robot Téoc, envoyé par le mage essespéus, qui nous vient en aide en vous intronisant aux voies du reproductible. Ses manières ne sont pas des plus délicates : il catapulte icarius au tout début de l'histoire. 
+
+
+Vous voilà à écrire votre première fonction, celle qui calcule l'âge d'Icarius. 
+
+```{r}
+calcul_age_arrondi <- function(nb_coeur) { 
+  round(nb_coeur * pi^2 - 2 * nb_coeur)
+}
+```
+
+C'est ainsi vous obtenez l'objet magique boomerang qui permet de désamorcer les tourbillons de l'éternel recommencement, permettant ainsi à Icarius de pénétrer cette fois dans le temple de l'ombre. 
+
+Muni de la petite clef et de la carte du donjon, les longues errances dans le labyrinthe de l'ombre conduisent à Zigûr, l'infâme oeil de Sassos. Grâce au boomerang pour agir à distance car le sol est pavé de trous béants et à votre épée, vous prenez possession de la Xième rune. 
+
+# Chapitre 12 
+
+Sorti enfin à l'air libre, vous longez le datalake jusqu'à rencontrer le drôle d'oiseau Febeler. S'il veut bien vous donnez les moyens de traverser à la nage le lac avec le sortilège palmes(), il vous faut toutefois documenter son fonctionnement et donc en lire la documentation car pour le paraphraser : 
+
+> Sans sortilèges, point de magie ! Et sans documentation, point de sortilèges ! 
+
+Vous voilà donc à soigneusement documenter votre précieuse fonction calcul_age_arrondi() grâce aux balises _roxygen2_ et c'est là la réponse à l'énigme posée par l'oiseau. 
+
+```{r}
+#' @title calcul_age_arrondi
+#' @description calculer l'âge arrondi d'un statisien selon son nombre de coeurs
+#' @param nb_coeur Un nombre
+#' @import tidyverse
+#' @examples
+#' calcul_age_arrondi(3)
+#' calcul_age_arrondi(4)
+calcul_age_arrondi <- function(nb_coeur){
+  calcul_age(nb_coeur)%>%
+    round()}
+
+```
+
+Febeler s'acquitte de sa promesse et vous fournit les palmes nécessaires à une traversée qui n'est pas sans encombres.
+
+Arrivé au temple de la glace des rivages syrtes probabilistes, les longs couloirs parsemés d'objets qui vous rapprochent de votre quête sont légion : une carte, une boussole, une petite clé, la clé du boss... La fin de ce chapitre approche ! Vous rencontrez Confusius, maître en ces lieux. 
+Une fois dehors, vous ne pouvez plus faire marche arrière. Qu'à cela ne tienne, chaussé de palmes, la quête reprend.
+
+Febeler, lui encore,  vous aiguille vers l'Est dans une forêt brumeuse peuplée de squelettes. La progression à travers les grumes creuses est difficile mais voici devant Asa la grenouille qui vous propose d'écrire votre destin et vos mémoires, simultanément.
+
+Votre quête de la maîtrise du mangage des runes s'achève ici. Prenez quelques instants pour observer le chemin accompli : 
+vous avez importé des fichiers, manipulé des données, synthétisé leur contenus en des tableaux résumés, exporté ces mêmes données pour les sauvegarder, créé et documenté des fonctions pour les réutiliser et les transmettre. Toutes les traces de votre connaissance (et bravoure !) sont présentées dans le présent (et précieux) document. 
+
+Vous pouvez, si vous le souhaitez, en guise d'aide-mémoire pour vos prochaines aventures avec R, enregistrer le fichier html qui résulte de ce RMarkdown en vous rendant dans l'onglet Files.
+
+Cliquez sur la case qui jouxte le nom de fichier et l'engrenage dans le menu de l'onglet vous laissera l'opportunité d'exporter votre prose. 
+(notez ci-dessous comment les images sont insérées dans un tel document)
+
+Vous trouverez juste à côté de votre RMarkdown (.Rmd) et html (fichier lisible dans un navigateur web) un fichier intitulé pour_asa.txt : il contient la réponse à fournir à Asa pour finaliser votre aventure au royaume de Statis.
 
 
 
