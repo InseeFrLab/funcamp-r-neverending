@@ -8,15 +8,7 @@ setHook("rstudio.sessionInit", function(newSession) {
   Sys.sleep(1)
   # cat(3)
   cat("lancement xaringan")
-  xaringan::infinite_moon_reader(moon = "chapitre13.Rmd",output_format = rmarkdown::output_format(pre_knit = function(...){
-    library(tidyverse)
-  },
-  knitr = rmarkdown::knitr_options(
-    opts_chunk = list(error = TRUE)
-  ),
-  pandoc = list(),
-  base_format = rmarkdown::html_document()
-  ))
+  xaringan::infinite_moon_reader(moon = "chapitre13.Rmd")
   rstudioapi::navigateToFile(file = "chapitre13.Rmd")
   cat("done")
 }, action = "append")
