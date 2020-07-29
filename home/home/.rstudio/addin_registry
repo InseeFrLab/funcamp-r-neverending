@@ -1,4 +1,49 @@
 {
+    "clipr::clipr_output": {
+        "name": "Output to clipboard",
+        "package": "clipr",
+        "title": "",
+        "description": "Copies the console output of a selected expression to the system clipboard",
+        "interactive": false,
+        "binding": "clipr_output",
+        "ordinal": 5
+    },
+    "clipr::clipr_result": {
+        "name": "Value to clipboard",
+        "package": "clipr",
+        "title": "",
+        "description": "Copies the results of a selected expression to the system clipboard",
+        "interactive": false,
+        "binding": "clipr_result",
+        "ordinal": 4
+    },
+    "rebootchap13::.reboot_chap13": {
+        "name": "Reboot chapitre 13",
+        "package": "rebootchap13",
+        "title": "",
+        "description": "Reboot chapitre 13",
+        "interactive": false,
+        "binding": ".reboot_chap13",
+        "ordinal": 1
+    },
+    "reprex::reprex_addin": {
+        "name": "Render reprex...",
+        "package": "reprex",
+        "title": "",
+        "description": "Run `reprex::reprex()` to prepare a reproducible example for sharing.",
+        "interactive": true,
+        "binding": "reprex_addin",
+        "ordinal": 2
+    },
+    "reprex::reprex_selection": {
+        "name": "Reprex selection",
+        "package": "reprex",
+        "title": "",
+        "description": "Prepare reprex from current selection",
+        "interactive": false,
+        "binding": "reprex_selection",
+        "ordinal": 3
+    },
     "xaringan::inf_mr": {
         "name": "Infinite Moon Reader",
         "package": "xaringan",
@@ -6,6 +51,6 @@
         "description": "Run xaringan::infinite_moon_reader() to live preview slides or any\n   single-HTML-file R Markdown output.",
         "interactive": true,
         "binding": "inf_mr",
-        "ordinal": 1
+        "ordinal": 6
     }
 }

@@ -1,6 +1,6 @@
-docker build -t chap13 .
-docker run --rm -p 8787:8787 -e USER=icarius -e PASSWORD=rstudio -e DISABLE_AUTH=true chap13
+docker run -e USER=icarius -e PASSWORD=statia -p 8787:8787 git-registry.lab.sspcloud.fr/funcamp-r/funcamp-r-neverending
 
-le contenu de home ne doit pas etre modifié, raison pour laquelle il est copié dans le container plutot que monté au moment du RUN. Au besoin il suffit de repartir du zip home.zip
-
+A noter :
+- le contenu de home ne doit pas etre modifié, raison pour laquelle il est copié dans le container plutot que monté au moment du RUN. Au besoin il suffit de repartir du zip home.zip
+- l'option  -e DISABLE_AUTH=false  semble poser problème.
 
