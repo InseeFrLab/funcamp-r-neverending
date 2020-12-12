@@ -163,18 +163,29 @@ Qu'à cela ne tienne ! Il énonce une étrange vérité :
 
 > quelle que soit la direction que tu regardes, la sortie se trouve au delà de Pi. 
 
-
-```{r}
-
+```{r include=FALSE}
+vecteur_choix <- c("Droite","Gauche","Gauche","Droite","Droite",
+"Gauche","Droite","Gauche","Gauche","Droite",
+"Droite","Gauche","Droite","Gauche","Gauche",
+"Droite","Droite","Gauche","Gauche","Droite")
+vecteur_seuil <- rep(pi,20)
+vecteur_ajust <- rep(-1,20)
+vecteur_ajust[c(6,10,12,19)]<-1
+vecteur_seuil <- vecteur_seuil + runif(20)*vecteur_ajust
 ```
 
-
-
+```{r}
+# Chercher les éléments de  vecteur_seuil dont la valeur est supérieure à pi
+# et sauvegarder cet ensemble de position dans un vecteur appelé vecteur_position
+vecteur_position <- which(vecteur_seuil>pi)
+# Extraire de vecteur_choix les éléments qui sont dans les emplacements 
+# de vecteur_position et afficher cet ensemble de directions
+vecteur_choix[vecteur_position]
+```
 
 # Chapitre 8 
 
-Une fois extrait du labyrinthe, on retrouve le mage Zilap dans le désert. Ce vieux ronchon doit bien reconnaître que vous avez progressé dans le maniement du langage des Runes ! Il vous explique comment ajouter des pages au grimoire, chaque package étant un nouveau chapitre. 
-
+Une fois extrait du labyrinthe, vous retrouvez le mage Zilap dans le désert. Ce vieux ronchon doit bien reconnaître que vous avez progressé dans le maniement du langage des Runes ! Il vous explique comment ajouter des pages au grimoire, chaque package étant un nouveau chapitre. 
 
 ```{r eval=FALSE}
 # J'installe les packages du tidyverse en une ligne
@@ -196,9 +207,9 @@ naissances %>%
   arrange(desc(Mana))
 ```
 
-C'est Statia ! et elle est née dans le village d'Hylia. Elle vous fait cadeau des bombes qui permettent de percer la montagne et entrer dans le temple de la Roche. Et c'est au coeur des souterrains, en déjouant monstres et boules de feu que Statia renforce le pouvoir de l'épée. Et heureusement car c'est Monolith qu'il faut affronter en déjouant ces satanées boules de feu. 
+C'est Statia ! et elle est née dans le village d'Hylia. Mam’Grouxi vous fait cadeau des bombes qui permettent de percer la montagne et entrer dans le temple de la Roche. Et c'est au coeur des souterrains, en déjouant monstres et boules de feu que le pouvoir de l'épée se trouve renforcé. Et heureusement, car c'est Monolith qu'il faut affronter en déjouant ces satanées boules de feu. 
 
-Vous voilà en possession de la Xième rune. 
+Vous voilà en possession de la quatrième rune. 
 
 En quittant le temple de la roche, l'éboulement condamne tout retour en arrière : l'affrontement final de SassoS est inélectuable. 
 
@@ -206,7 +217,7 @@ En quittant le temple de la roche, l'éboulement condamne tout retour en arrièr
 # Chapitre 10 
 
 
-En poursuivant vos pérégrinations et après avoir abattu quelques drôles de sphinx, icaRius se trouve pris au piège dans la salle de l'impossible. Quelle que soit la direction prise, Icarius aterrit toujours au même endroit. Il doit apprendre à garder les choses en mémoire et les sauvegarder. 
+En poursuivant vos pérégrinations et après avoir abattu quelques drôles de sphinx, icaRius se trouve pris au piège dans la salle de l'impossible. Quelle que soit la direction prise, Icarius atterrit toujours au même endroit. Il doit apprendre à garder les choses en mémoire et les sauvegarder. 
 
 ```{r eval=FALSE}
 save(naissances_1213,naissances_mana,file="../sauvegarde/tables_chapitre9.RData")
@@ -219,8 +230,7 @@ En retenant la suite d'instructions directionnelles qui s'avère être la célè
 
 # Chapitre 11
 
-Au sortir de la salle de l'impossible, Icarius ne peut poursuivre son chemin face aux tourbillons de l'éternel recommencement : il se retrouve systématiquement éjecté. C'est le robot Téoc, envoyé par le mage essespéus, qui nous vient en aide en vous intronisant aux voies du reproductible. Ses manières ne sont pas des plus délicates : il catapulte icarius au tout début de l'histoire. 
-
+Au sortir de la salle de l'impossible, Icarius ne peut poursuivre son chemin face aux tourbillons de l'éternel recommencement : il se retrouve systématiquement éjecté. C'est le robot TeoC, envoyé par le mage Essespéus, qui nous vient en aide en vous intronisant aux voies du reproductible. Ses manières ne sont pas des plus délicates : il catapulte Icarius au tout début de l'histoire ! 
 
 Vous voilà à écrire votre première fonction, celle qui calcule l'âge d'Icarius. 
 
@@ -230,13 +240,13 @@ calcul_age_arrondi <- function(nb_coeur) {
 }
 ```
 
-C'est ainsi vous obtenez l'objet magique boomerang qui permet de désamorcer les tourbillons de l'éternel recommencement, permettant ainsi à Icarius de pénétrer cette fois dans le temple de l'ombre. 
+C'est ainsi vous obtenez le boomerang magique qui permet de désamorcer les tourbillons de l'éternel recommencement : Icarius peut ainsi pénétrer dans le temple de l'ombre. 
 
-Muni de la petite clef et de la carte du donjon, les longues errances dans le labyrinthe de l'ombre conduisent à Zigûr, l'infâme oeil de Sassos. Grâce au boomerang pour agir à distance car le sol est pavé de trous béants et à votre épée, vous prenez possession de la Xième rune. 
+Muni de la petite clef et de la carte du donjon, les longues errances dans le labyrinthe de l'ombre conduisent à Zigûr, l'infâme oeil de Sassos. Grâce au boomerang pour agir à distance car le sol est pavé de trous béants et à votre épée, vous prenez possession de la cinquième rune. 
 
 # Chapitre 12 
 
-Sorti enfin à l'air libre, vous longez le datalake jusqu'à rencontrer le drôle d'oiseau Febeler. S'il veut bien vous donnez les moyens de traverser à la nage le lac avec le sortilège palmes(), il vous faut toutefois documenter son fonctionnement et donc en lire la documentation car pour le paraphraser : 
+Sorti enfin à l'air libre, vous longez le datalake jusqu'à rencontrer le drôle d'oiseau Febeler. S'il veut bien vous donner les moyens de traverser à la nage le lac avec le sortilège palmes(), il vous faut toutefois documenter son fonctionnement et donc en lire la documentation car pour le paraphraser : 
 
 > Sans sortilèges, point de magie ! Et sans documentation, point de sortilèges ! 
 
@@ -258,23 +268,21 @@ calcul_age_arrondi <- function(nb_coeur){
 
 Febeler s'acquitte de sa promesse et vous fournit les palmes nécessaires à une traversée qui n'est pas sans encombres.
 
-Arrivé au temple de la glace des rivages syrtes probabilistes, les longs couloirs parsemés d'objets qui vous rapprochent de votre quête sont légion : une carte, une boussole, une petite clé, la clé du boss... La fin de ce chapitre approche ! Vous rencontrez Confusius, maître en ces lieux. 
-Une fois dehors, vous ne pouvez plus faire marche arrière. Qu'à cela ne tienne, chaussé de palmes, la quête reprend.
+Arrivé au temple de la glace, les longs couloirs parsemés d'objets qui vous rapprochent de votre quête sont légion : une carte, une boussole, une petite clé, la clé du boss... La fin de ce chapitre approche ! Vous rencontrez Confusius, maître en ces lieux. Et remportez la sixième rune ! Une fois dehors, vous ne pouvez plus faire marche arrière. Qu'à cela ne tienne, la quête reprend.
 
-Febeler, lui encore,  vous aiguille vers l'Est dans une forêt brumeuse peuplée de squelettes. La progression à travers les grumes creuses est difficile mais voici devant Asa la grenouille qui vous propose d'écrire votre destin et vos mémoires, simultanément.
+Febeler, lui encore,  vous aiguille vers l'Est dans une forêt brumeuse peuplée de squelettes. La progression à travers les grumes creuses est difficile... Vous rencontrez enfin Asa la gueRnouille qui vous propose d'écrire votre destin et vos mémoires, simultanément.
 
-Votre quête de la maîtrise du mangage des runes s'achève ici. Prenez quelques instants pour observer le chemin accompli : 
-vous avez importé des fichiers, manipulé des données, synthétisé leur contenus en des tableaux résumés, exporté ces mêmes données pour les sauvegarder, créé et documenté des fonctions pour les réutiliser et les transmettre. Toutes les traces de votre connaissance (et bravoure !) sont présentées dans le présent (et précieux) document. 
+Votre quête de la maîtrise du langage des runes s'achève ici. Prenez quelques instants pour observer le chemin accompli : vous avez importé des fichiers, manipulé des données, synthétisé leur contenu en des tableaux résumés, exporté ces mêmes données pour les sauvegarder, créé et documenté des fonctions pour les réutiliser et les transmettre. Toutes les traces de votre connaissance (et bravoure !) sont présentées dans le présent (et précieux) document. 
 
-Vous pouvez, si vous le souhaitez, en guise d'aide-mémoire pour vos prochaines aventures avec R, enregistrer le fichier html qui résulte de ce RMarkdown en vous rendant dans l'onglet Files.
+Vous pouvez, si vous le souhaitez, en guise d'aide-mémoire pour vos prochaines aventures avec R, enregistrer le fichier html qui résulte de ce RMarkdown en vous rendant dans **l'onglet Files, qui se trouve sur votre droite, dans un cadran de la partie inférieure de l'écran**.
 
 Cliquez sur la case qui jouxte le nom de fichier et l'engrenage dans le menu de l'onglet vous laissera l'opportunité d'exporter votre prose. 
 (notez ci-dessous comment les images sont insérées dans un tel document)
 
-Vous trouverez juste à côté de votre RMarkdown (.Rmd) et html (fichier lisible dans un navigateur web) un fichier intitulé pour_asa.txt : il contient la réponse à fournir à Asa pour finaliser votre aventure au royaume de Statis.
+**Toujours dans cet onglet Files, vous trouverez juste à côté de votre RMarkdown (.Rmd) et html (fichier lisible dans un navigateur web) un fichier intitulé pour_asa.txt : il contient la réponse à fournir à Asa pour finaliser votre aventure au royaume de Statis**. Pour ouvrir ce fichier pour_asa.txt, il vous suffira de cliquer dessus...
 
 
-(Fin de cette épreuve. Version 0.9.2.1)
+(Fin de cette épreuve. Version 0.9.2.2)
 
 
 
