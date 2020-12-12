@@ -1,18 +1,17 @@
 
 Vous voici donc dans RStudio. Prenez le temps de prendre vos marques. L'environnement a été préparé pour vous : à gauche le panneau source, à droite le viewer. Sentez-vous libre de manipuler les fenêtres comme bon vous semble. 
 
-Pour faciliter la mise en formes des mémoires d'Icarius au Royaume de Statis, nous allons utiliser le dièse pour faire en sorte que le texte apparaisse comme un titre dans le rapport des aventures, voyez plutôt. En positionnant un dièse sur la ligne 8, on observe une mise en forme sous forme de grand titre du rendu sur votre droite. Et en encadrant _des mots_ avec des _ de part et d'autre, on constate leur mise en forme italique. 
-Nous utiliserons ces balises tout au long du texte. Notez comment RStudio les colore en bleu pour nous assister. 
+Pour faciliter la mise en forme des mémoires d'Icarius au Royaume de Statis, nous allons utiliser le dièse pour faire en sorte que le texte apparaisse comme un titre dans le rapport des aventures. Voyez plutôt : en positionnant un dièse sur la ligne 6, on observe une mise en page sous forme de grand titre du rendu sur votre droite. Et en encadrant _des mots_ avec des _ de part et d'autre, on constate leur mise en forme italique. Nous utiliserons ces balises tout au long du texte. Notez comment RStudio les colore en bleu pour nous assister. 
 
 # Chapitre 1 
 
-Icarius se réveille, Statia lui a murmuré dans un demi-sommeil que son royaume est en danger, elle a besoin de lui. Sitôt levé le mage Zilap vous a invité à prendre posession du grimoire IgoR.
+Icarius se réveille, Statia lui murmure dans un demi-sommeil que son royaume est en danger : elle a besoin de lui. Sitôt levé, vous avez rencontré le mage Zilap, qui vous a invité à prendre possession du grimoire IgoR.
 
-Pour quitter la maison d'Icarius, vous avez répondu consulté le grimoire et répondu à la question du mage Dregor : 
+Pour quitter la maison d'Icarius, vous avez répondu à la question du mage RegoR : 
 
 > Quel est l'âge d'Icarius ? 
 
-A cet effet, nous avons exécuté l'instruction suivante : 
+À cet effet, nous avons exécuté l'instruction suivante : 
 
 ```{r}
 nb_coeur <- 3
@@ -25,7 +24,7 @@ Une fois dehors, vous avez parcouru les plaines de Statis et rencontré Statia. 
 
 # Chapitre 2
 
-Parfaitement équipé, nous pouvons nous rendre au village de Kokoro en hachant menu les buissons.  
+Parfaitement équipé, nous nous sommes rendu au village Kokoro en hachant menu les buissons.  
 Au village, le mage Tourep nous confie la lourde responsabilité d'aider la fermière avec le registre des pontes. 
 
 > En reconstituant le livre de comptes à partir des 4 fichiers aux formats différents quelle poule est la plus performante ? 
@@ -64,16 +63,16 @@ livre_compte_4
 ```
 
 Le mage Tourep nous remercie d'un bouclier qui nous rend apte à traverser les dangers des plaines de Statis. 
-Ainsi équipé, nous accédons à la première rune en abattant le premier monstrueux papillon
+Ainsi équipé, nous accédons à la première rune en abattant un monstrueux papillon.
 
 
 # Chapitre 3
 
-Au delà des plaines de Statis, le mage Xeilhac qui siège dans le village de GrissGrass nous bassine avec sa soupe et...la mandragore. Il nous charge de mener l'enquête. 
+Au delà des plaines de Statis, le mage Xeilhac qui siège dans le village GrissGrass nous bassine avec sa soupe et... la mandragore. Il nous charge de mener l'enquête. 
 
 > Qui possède l'exploitation la plus productive ? 
 
-```{r}
+```{r message=FALSE}
 fichier_tellus <- import("donnees/recensement_agricole_statia_Tellus.ods")
 fichier_galia <- import("donnees/recensement_agricole_statia_Galia.ods")
 
@@ -82,6 +81,7 @@ skim(fichier_galia)
 skim(fichier_tellus)
 ```
 
+Le modeste Galia est bien le meilleur producteur de Mandragore - tant pis pour ce prétentieux Tellus !
 
 
 # Chapitre 4 
@@ -101,18 +101,17 @@ champ %>%
   recolter()
 
 ```
-(ce morceau de code n'est pas évalué)
 
 En récompense à vos nouvelles compétences en vocabulaire, le fermier Galia et le chef du village de Griss Grass vous offrent un filtre de mandragore : vos pouvoirs sont augmentés. 
 
-En allant au-delà du cimetière de GrissGrass, nous voilà face au monstrueux et souterrain Tartaros qui emprisonne les esprits égoistes qui ne partagent pas leur code. 
+En allant au-delà du cimetière de GrissGrass, nous voilà face au monstrueux et souterrain Tartaros qui emprisonne les esprits égoïstes qui ne partagent pas leur code. 
 
 Gonflé au philtre de Mandragore, Icarius n'en fait qu'une bouchée et prend du galon : il acquiert sa seconde rune. 
 
 # Chapitre 5 
 
-Arrivé au château de Statis la situation est dramatique : des forces occultes puissantes sont à l'oeuvre. Le ministre des armées Parlyus occupe le chateau avec des soldats.  
-Il réclame la guerre ! Quelle drôle d'idée ! Pour obtenir la clé de la cachette d'essepéus et se faire aider, il faut gagner la confiance de Batreb qui noie son chagrin dans l'ambroisie et résoudre l'énigme proposée en traçant le graphique qui permet de répondre à la question suivante : 
+Arrivé au château de Statis la situation est dramatique : des forces occultes sont à l'oeuvre. Le ministre des armées Parlyus occupe le château avec des soldats.  
+Il réclame la guerre ! Quelle drôle d'idée ! Pour obtenir la clé de la cachette d'Essespéus et se faire aider, il faut gagner la confiance de Batreb qui noie son chagrin dans l'ambroisi... Pour cela, vous devez résoudre l'énigme proposée en traçant le graphique qui permet de répondre à la question suivante : 
 
 > A partir de quelle puissance d'ambroisie Batreb franchit le seuil des 100 hoquets par heure ?
 
@@ -122,14 +121,14 @@ livre_ambroisie %>%
   gf_line(ivresse ~ puissance, title = "Attention à l'abus d'ambroisie...")
 ```
 
-Vous obtenez la clé qui permet de libérer Essepéus de la cave (ou ce qu'il en reste). 
+Vous obtenez la clé qui permet de libérer Essespéus de la cave (ou ce qu'il en reste, hips !). 
 
 # Chapitre 6
 
-Une fois libéré de son cachot, Essepéus vous pose de tromper Parlyus en lui communiquant une fake news. Il s'agit de le tromper et de diriger les forces obscures le plus loin possible auprès du peuple le plus armé. 
-Le temps presse, car il s'agit de vaincre Sassos avant que le chef des armées ne rejoigne ce territoire. Statis est un royaume pacifique etvous devez veiller à ce qu'il le reste. 
+Une fois libéré de son cachot, Essespéus vous propose de tromper Parlyus en lui communiquant une _fake news_. Il s'agit de le tromper et de diriger les forces obscures le plus loin possible auprès du peuple le plus armé. 
+Le temps presse, car il s'agit de vaincre Sassos avant que le chef des armées ne rejoigne ce territoire. Statis est un royaume pacifique et vous devez veiller à ce qu'il le reste. 
 
-> Quel royaume est le plus éloigné, compte le plus de guerriers et le plus grand nombre de jours de canicule ? 
+> Quel royaume est le plus éloigné, tout en comptant le plus de guerriers et le plus grand nombre de jours de canicule ? 
 
 ```{r}
 
@@ -259,7 +258,7 @@ Cliquez sur la case qui jouxte le nom de fichier et l'engrenage dans le menu de 
 Vous trouverez juste à côté de votre RMarkdown (.Rmd) et html (fichier lisible dans un navigateur web) un fichier intitulé pour_asa.txt : il contient la réponse à fournir à Asa pour finaliser votre aventure au royaume de Statis.
 
 
-
+(Fin de cette épreuve. Version 0.9.2)
 
 
 
