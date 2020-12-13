@@ -284,7 +284,12 @@ Cliquez sur la case qui jouxte le nom de fichier et l'engrenage dans le menu de 
 
 Toujours dans cet onglet Files, vous trouverez juste à côté de votre RMarkdown (.Rmd) et html (fichier lisible dans un navigateur web) un fichier intitulé _pour_asa.txt_ : il contient la réponse à fournir à Asa pour finaliser votre aventure au royaume de Statis. Pour ouvrir ce fichier _pour_asa.txt_, il vous suffira de cliquer dessus...
 
+```{r  echo=FALSE}
+library(knitr)
+include_graphics("donnees/rstudio_solution.png")
+```
+
 Une fois bien noté ce code magique, vous pouvez reprendre le jeu vidéo icaRius et donner la réponse à Asa la gueRnouille.
 
-(Fin de cette épreuve. Version 0.9.2.3)
+(Fin de cette épreuve. Version 0.9.3)
 
