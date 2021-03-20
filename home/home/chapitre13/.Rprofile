@@ -1,3 +1,6 @@
+# Use a backup file so as to reboot with clean Rmarkdown if necessary
+file.copy(from ="/home/icarius/chapitre13/.chapitre13_soluce_backup.Rmd" ,to = "/home/icarius/chapitre13/chapitre13.Rmd")
+
 setHook("rstudio.sessionInit", function(newSession) {
   # for ( i in 1:100){
   # .rs.api.documentClose()
@@ -21,37 +24,10 @@ setHook("rstudio.sessionInit", function(newSession) {
   cat("done")
 }, action = "append")
 
-
-
-file.copy(from ="/home/icarius/chapitre13/chapitre13.Rmd" ,to = "/home/icarius/.chapitre13_soluce_backup.Rmd")
-
+# Reboot plugin
 .reboot_chap13 <- function(...){
   unlink("/home/icarius/chapitre13/chapitre13.Rmd",force = TRUE)
   file.copy(from ="/home/icarius/.chapitre13_soluce_backup.Rmd" ,to = "/home/icarius/chapitre13/chapitre13.Rmd")
   file.edit("/home/icarius/chapitre13/chapitre13.Rmd")
 }
 
-
-# library(rstudioapi)
-# for ( i in 1:100){
-# .rs.api.documentClose()
-# }
-# #
-# rstudioapi::navigateToFile(file = "plop.Rmd")
-# message("on attend")
-# Sys.sleep()
-# message("ok")
-# xaringan::infinite_moon_reader()
-# message("yo")
-#
-#
-# #
-# # invisible(addTaskCallback(function(...) {
-# #   cat(format(Sys.time()), "task callback executing!\n")
-# #   cat("tools:rstudio in search():", "tools:rstudio" %in% search(), "\n")
-# #   cat("rstudioapi::isAvailable():", rstudioapi::isAvailable(), "\n")
-# #   return(FALSE)
-# # }))
-#
-#
-# # https://github.com/rstudio/rstudio/issues/1579
