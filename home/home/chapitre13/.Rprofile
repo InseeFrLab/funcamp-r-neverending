@@ -1,10 +1,7 @@
 # Use a backup file so as to reboot with clean Rmarkdown if necessary
-file.copy(from ="/home/icarius/chapitre13/.chapitre13_soluce_backup.Rmd" ,to = "/home/icarius/chapitre13/chapitre13.Rmd")
+file.copy(from ="chapitre13_backup.Rmd",to = "chapitre13.Rmd")
 
 setHook("rstudio.sessionInit", function(newSession) {
-  # for ( i in 1:100){
-  # .rs.api.documentClose()
-  # }
   # cat(1)
   rstudioapi::navigateToFile(file = "chapitre13.Rmd")
   # cat(2)
@@ -27,7 +24,7 @@ setHook("rstudio.sessionInit", function(newSession) {
 # Reboot plugin
 .reboot_chap13 <- function(...){
   unlink("/home/icarius/chapitre13/chapitre13.Rmd",force = TRUE)
-  file.copy(from ="/home/icarius/.chapitre13_soluce_backup.Rmd" ,to = "/home/icarius/chapitre13/chapitre13.Rmd")
+  file.copy(from ="/home/icarius/chapitre13/chapitre13_backup.Rmd",to = "/home/icarius/chapitre13/chapitre13.Rmd")
   file.edit("/home/icarius/chapitre13/chapitre13.Rmd")
 }
 
