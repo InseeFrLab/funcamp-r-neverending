@@ -1,5 +1,8 @@
 # Use a backup file so as to reboot with clean Rmarkdown if necessary
+# for local use (portable version)
 file.copy(from ="chapitre13_backup.Rmd",to = "chapitre13.Rmd")
+# for cloud use
+file.copy(from ="/home/icarius/chapitre13/chapitre13_backup.Rmd",to = "/home/icarius/chapitre13/chapitre13.Rmd")
 
 setHook("rstudio.sessionInit", function(newSession) {
   # cat(1)
